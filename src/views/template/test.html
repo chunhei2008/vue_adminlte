@@ -1,0 +1,30 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        Test
+        <small>Version 2.0</small>
+      </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Test</li>
+    </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <!-- Info boxes -->
+    <div class="row">
+        <div class="col-md-12">
+          <button @click="change">改变</button>
+            <div class="info-box">
+                <echart-pie :option.sync="option"></echart-pie>
+                <simditor :content.sync="content"></simditor>
+            </div>
+            <!-- /.info-box -->
+        </div>
+    </div>
+</aside>
+<!-- /.control-sidebar -->
+<!-- Add the sidebar's background. This div must be placed
+       immediately after the control sidebar -->
+<div class="control-sidebar-bg"></div>
