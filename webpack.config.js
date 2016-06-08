@@ -1,8 +1,11 @@
 module.exports = {
-    entry: './src/entry.js',
+    entry: {
+      'admin':'./src/admin/admin.js',
+      'home':'./src/home/home.js'
+    },
     output: {
         path: __dirname + '/dist',
-        filename: 'app.js',
+        filename: '[name].bundle.js',
         chunkFilename: "[id].app.js?[chunkhash]",
         publicPath: '/dist/'
     },
