@@ -7,30 +7,6 @@ Vue.use(VueRouter)
 Vue.config.debug = true
 Vue.config.devtools = true
 
-Vue.directive('ueditor', {
-           params: ['config'],
-           twoWay: true,
-           bind: function () {
-               var self = this;
-               this.editor = UE.getEditor(this.el.id, this.params.config)
-               this.editor.ready(function () {
-                   self.editorReady = true
-                   self.editor.addListener("contentChange", function () {
-                       self.set(self.editor.getContent())
-                   })
-                   self.update(self.vm.$get(self.expression))
-               })
-           },
-           update: function (newValue, oldValue) {
-               if (this.editorReady) {
-                   this.editor.setContent(newValue)
-               }
-           },
-           unbind: function () {
-               this.editor.destroy()
-           }
-       });
-
 var app = Vue.extend({})
 var router = new VueRouter()
 

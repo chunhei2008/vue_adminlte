@@ -1,6 +1,4 @@
 import Simditor from '../../../components/Simditor.vue';
-//var Firebase = require("firebase");
-//var tags  = new Firebase('https://fir-a6355.firebaseio.com/tags/');
 
 export default {
     methods: {
@@ -59,9 +57,9 @@ export default {
     components: {
         Simditor
     },
-    /*
-    firebase:{
-      all_tags:tags.limitToLast(25)
+    watch:{
+      content:function(val,oldValue){
+          console.log(val);
+      }
     }
-    */
 }

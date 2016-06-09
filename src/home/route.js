@@ -37,6 +37,12 @@ module.exports = function(router) {
             component: function(resolve) {
                 require(['./views/Contact.vue'], resolve)
             }
+        },
+        '/': {
+            name: 'index',
+            component: function(resolve) {
+                require(['./views/Home.vue'], resolve)
+            }
         }
     })
 }
