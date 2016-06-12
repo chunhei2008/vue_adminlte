@@ -34,7 +34,7 @@
                             <input type="text" class="form-control" placeholder="新增标签" v-model="new_tags">
                         </div>
                         <div>
-                            <label class="checkbox-inline" v-for="tag in all_tags">
+                            <label class="checkbox-inline" v-for="tag in sys_tags">
                                 <input type="checkbox" value="{{tag.id}}" v-model="tags" /> {{tag.name}}
                             </label>
                         </div>

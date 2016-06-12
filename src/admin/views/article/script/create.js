@@ -5,9 +5,10 @@ export default {
         submit() {
             var self = this;
             var article = {
-                title: this.title,
-                tags: this.tags,
-                content: this.content
+                title: self.title,
+                new_tags:self.new_tags,
+                tags: self.tags,
+                content: self.content
             }
             $.ajax({
                 url: '/admin/article',
@@ -26,35 +27,22 @@ export default {
     data() {
         return {
             title: '',
-            tags: ['1', '2'],
+            new_tags:'',
+            tags: [],
             content: '',
-            all_tags: [{
-                id: 1,
-                name: 'abc',
-            }, {
-                id: 2,
-                name: 'abc',
-            }, {
-                id: 3,
-                name: 'abc',
-            }, {
-                id: 4,
-                name: 'abc',
-            }]
+            sys_tags: []
         };
     },
     route: {
         data: function(transition) {
             let page = transition.to.params.page;
+            var self = this;
             $.ajax({
-                url: '/admin/tag/all',
                 type: 'GET',
-                dataType: 'json',
-                data: {},
+                contentType:'text',
+                url: 'http://blog.chunhei2008.com:8081/admin/tag/all',
                 success: function(response) {
-                    transition.next({
-                        tags: response.data
-                    })
+                    self.sys_tags = response.data;
                 }
             })
         }

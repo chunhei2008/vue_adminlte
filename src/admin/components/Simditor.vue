@@ -20,7 +20,6 @@ export default {
       editor.setValue(self.content);
       editor.on("valuechanged", function(){
           self.content = editor.getValue();
-          console.log(editor.getValue());
       });
   }
 }

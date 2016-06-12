@@ -1,8 +1,10 @@
 var Vue = require('vue')
 var VueRouter = require('vue-router')
 var Route = require('./route')
+var VueResource = require('vue-resource')
 require('bootstrap')
 
+Vue.use(VueResource)
 Vue.use(VueRouter)
 Vue.config.debug = true
 Vue.config.devtools = true

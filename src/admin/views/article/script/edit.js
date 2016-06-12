@@ -27,39 +27,23 @@ export default {
         return {
             id: '',
             title: '',
-            tags: ['1', '2'],
+            new_tags: '',
+            tags: [],
             content: '',
-            all_tags: [{
-                id: 1,
-                name: 'abc',
-            }, {
-                id: 2,
-                name: 'abc',
-            }, {
-                id: 3,
-                name: 'abc',
-            }, {
-                id: 4,
-                name: 'abc',
-            }]
+            sys_tags: []
         };
     },
-    route: {
-        //从服务器获取数据
-        data: function(transition) {
-            let page = transition.to.params.page;
-            //获取token
-            //获取文章
-            let id = transition.to.params.id;
-            id = id;
-        }
+    ready: function() {
+        var self = this;
+        $.ajax({
+            type: 'GET',
+            url: 'http://blog.chunhei2008.com:8081/admin/tag/all',
+            success: function(response) {
+                self.sys_tags = response.data;
+            }
+        })
     },
     components: {
         Simditor
-    },
-    watch:{
-      content:function(val,oldValue){
-          console.log(val);
-      }
     }
 }
