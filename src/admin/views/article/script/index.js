@@ -1,9 +1,7 @@
 import AdminPagination from '../../../components/AdminPagination.vue'
-export default
-{
+export default {
     methods: {
-        remove(index)
-        {
+        remove(index) {
             if (window.confirm('确定要删除')) {
                 let self = this
                 let id = self.data[index].id
@@ -14,7 +12,7 @@ export default
                     data: {
                         id: id
                     },
-                    success: function (response) {
+                    success: function(response) {
                         self.data.splice(index, 1)
                     }
                 })
@@ -24,8 +22,7 @@ export default
     components: {
         AdminPagination
     },
-    data()
-    {
+    data() {
         return {
             data: [],
             path: {},
@@ -37,12 +34,6 @@ export default
             prev_page_url: '',
             from: 0,
             to: 10
-        }
-    },
-    route: {
-        data: function (transition) {
-            let page = transition.to.params.page;
-
         }
     }
 }

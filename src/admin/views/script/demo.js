@@ -9,7 +9,18 @@ var config = {
     storageBucket: "fir-a6355.appspot.com",
 };
 firebase.initializeApp(config);
-
+firebase.auth().signInAnonymously().catch(function(error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // [START_EXCLUDE]
+    if (errorCode === 'auth/operation-not-allowed') {
+        alert('You must enable Anonymous auth in the Firebase Console.');
+    } else {
+        console.error(error);
+    }
+    // [END_EXCLUDE]
+});
 
 export default {
     data() {
@@ -41,33 +52,6 @@ export default {
             signin: function() {
                 var email = 'chunhei2008@qq.com';
                 var password = 'baicai88';
-                // [START authanon]
-                /*        firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-                    // Handle Errors here.
-                    var errorCode = error.code;
-                    var errorMessage = error.message;
-                    // [START_EXCLUDE]
-                    if (errorCode === 'auth/wrong-password') {
-                        alert('Wrong password.');
-                    } else {
-                        console.error(error);
-                    }
-                    // [END_EXCLUDE]
-                });
-*/
-                firebase.auth().signInAnonymously().catch(function(error) {
-                    // Handle Errors here.
-                    var errorCode = error.code;
-                    var errorMessage = error.message;
-                    // [START_EXCLUDE]
-                    if (errorCode === 'auth/operation-not-allowed') {
-                        alert('You must enable Anonymous auth in the Firebase Console.');
-                    } else {
-                        console.error(error);
-                    }
-                    // [END_EXCLUDE]
-                });
-
 
                 var newPostKey = firebase.database().ref().child('posts').push().key;
 
