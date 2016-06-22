@@ -6,7 +6,7 @@ module.exports = function (router) {
             component: function (resolve) {
                 require(['./views/Admin.vue'], resolve)
             },
-            subRoutes: {
+            subRoutes: {/*
                 '/tag/:page': {
                     name: 'tag-index',
                     auth: true,
@@ -21,6 +21,7 @@ module.exports = function (router) {
                         require(['./views/tag/Edit.vue'], resolve)
                     }
                 },
+                */
                 '/article/create': {
                     name: 'article-create',
                     auth: true,
@@ -60,7 +61,14 @@ module.exports = function (router) {
                     component: function (resolve) {
                         require(['./views/404.vue'], resolve)
                     }
-                }
+                },
+                '/test1': {
+                    name: 'test1',
+                    auth: true,
+                    component: function (resolve) {
+                        require(['./views/Test1.vue'], resolve)
+                    }
+                },
             }
         },
         '/login': {

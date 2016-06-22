@@ -1,7 +1,7 @@
 module.exports = {
     entry: {
-      'admin':'./src/admin/admin.js',
-      'home':'./src/home/home.js'
+        'admin': './src/admin/admin.js',
+        'home': './src/home/home.js'
     },
     output: {
         path: __dirname + '/dist',
@@ -16,15 +16,14 @@ module.exports = {
             }, {
                 test: /\.css$/,
                 loader: "style-loader!css-loader"
-            },
-            /*,
-      {
-        test: /\.(jpe?g|png|gif|svg)$/i,
-        loaders: [
-            'file?hash=sha512&digest=hex&name=[hash].[ext]',
-            'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
-        ]
-    }  */
+            }, {
+                test: /\.js$/,
+                exclude: /(node_modules|bower_components)/,
+                loader: 'babel', // 'babel-loader' is also a legal name to reference
+                query: {
+                    presets: ['es2015']
+                }
+            }
         ]
     }
 }

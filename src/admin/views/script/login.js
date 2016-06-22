@@ -1,4 +1,4 @@
-require('../../../../node_modules/admin-lte/plugins/iCheck/icheck.min.js');
+require('../../../../node_modules/admin-lte/plugins/iCheck/icheck.min.js')
 
 export default {
     data() {
@@ -17,7 +17,6 @@ export default {
                 $('#remember-me').on('ifUnchecked', function(e) {
                     self.remember = false;
                 });
-                console.log(self.email, self.password, self.remember);
                 self.$route.router.go('/demo');
             }
         },
@@ -29,4 +28,4 @@ export default {
             });
             $('body').removeClass().addClass('hold-transition login-page');
         }
-}
+};

@@ -8,5 +8,5 @@ export default{
       msg:'this is home'
     }
   }
-}
+};
 </script>

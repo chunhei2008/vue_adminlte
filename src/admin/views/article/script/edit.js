@@ -1,4 +1,4 @@
-import Simditor from '../../../components/Simditor.vue';
+import Simditor from '../../../components/Simditor.vue'
 
 export default {
     methods: {
@@ -8,7 +8,7 @@ export default {
                 title: this.title,
                 tags: this.tags,
                 content: this.content
-            }
+            };
             $.ajax({
                 url: '/admin/article',
                 type: 'POST',
@@ -41,9 +41,9 @@ export default {
             success: function(response) {
                 self.sys_tags = response.data;
             }
-        })
+        });
     },
     components: {
         Simditor
     }
-}
+};

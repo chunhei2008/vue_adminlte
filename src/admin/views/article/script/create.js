@@ -1,5 +1,5 @@
-import Simditor from '../../../components/Simditor.vue';
-var firebase = require('firebase');
+import Simditor from '../../../components/Simditor.vue'
+var firebase = require('firebase')
 // Initialize Firebase
 var config = {
     apiKey: "AIzaSyBxIHWnUX-6gzMn5a9yAHaincrNl2hE92I",
@@ -64,4 +64,4 @@ export default {
     components: {
         Simditor
     }
-}
+};
